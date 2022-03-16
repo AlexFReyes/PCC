@@ -11,5 +11,14 @@ first_last = name.split()
 first_name = first_last[0]
 last_name = first_last[-1]
 # Using variables in strings f"" will allow you to insert variables into strings
-full_name = f'Your first name is {first_name.title()}, and your last name is{last_name.title()}.'
+full_name = f'Your first name is {first_name.title()}, and your last name is {last_name.title()}.'
 print(full_name)
+
+# in order to add whitespace before a prompt or something add \t inside the "" before the string
+print('\tPython')
+# To add a newline in a string use \n
+print('\nMonkey\nanimal\nlong john')
+# You can combine \n and \t  to make indents and new lines simultaneously
+# The method .rstrip()/.lstrip will remove whitespaces from the right and left sides of a string
+# The method .strip() will remove whitespace from the left and right at the same time
+
