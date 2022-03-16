@@ -8,4 +8,6 @@ print(message)
 message = 'Hellow Python Crash Course World!'
 print(message)
 
-
+# Correct the error (mesage -> message)
+message = "Hello Python Crash Course reader!"
+print(message)
