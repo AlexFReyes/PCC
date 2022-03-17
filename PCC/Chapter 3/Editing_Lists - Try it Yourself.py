@@ -29,6 +29,5 @@ for i in range(len(invites)-2):
     print(f'\tDear Mr. {cut_invitee.title()},\n\n\t\tI regret to inform you that we will not have space for you to dine with us at the Reyes Estate dinner tonight.\n\n\t\tSincerest regrets,\n\t\tSir Goldwell\n')
 for x in invites:
     print(f'\tDear Mr. {x.title()},\n\n\tI am pleased to inform you that you will be dining with us at the Reyes Estate dinner tonight if you so choose.\n\n\tGraciously,\n\tSir Goldwell\n')
-del invites[0]
-del invites[0]
+del invites[0:len(invites)]
 print(invites)
