@@ -11,3 +11,9 @@ print(message)
 # Correct the error (mesage -> message)
 message = "Hello Python Crash Course reader!"
 print(message)
+
+# Multiple Assignment - assign values to multiple variables in a single line of code
+x, y, z = 0, 0, 0
+
+# Constants - Variables that are capitalized are treated as constants throughout the life of a program
+MAX_CONNECTIONS = 5000
