@@ -3,7 +3,7 @@ answer = input().lower()
 
 if answer == 'alex':
     print('Welcome home king')
-elif answer == 'hannah' or 'geis' or 'hannah geis' or 'han':
+elif answer == 'hannah' or 'geis' or 'hannah geis' or 'han' or 'test':
     gay_list = []
     for i in range(1001):
         gay_list.append(('LOL GAYs has entered'))
