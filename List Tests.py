@@ -79,22 +79,19 @@ Alabama
 .Wyoming
 '''.lower().split('.')
 
-nasdtec_list_clean = ''.join([i for i in nasdtec_list_raw if not i.isdigit()])
-n_list = nasdtec_list_clean.split('.')
+nasdtec_list_clean = ''.join([i for i in nasdtec_list_raw if not i.isdigit()]).split('.')
 
-gn_list = []
-for i in n_list:
+for i in nasdtec_list_clean:
     ap = i.strip()
-    gn_list.append(ap)
+    nasdtec_list_clean[nasdtec_list_clean.index(i)] = ap
 
-s_list = []
 for i in state_list:
     sa = i.strip()
-    s_list.append(sa)
+    state_list[state_list.index(i)] = sa
 
-for i in s_list:
-    if i not in gn_list:
-        print(f'{i} is not in nasdtec')
+for i in state_list:
+    if i not in nasdtec_list_clean:
+        print(f'{i.title()} is not in the NASDTEC agreement and you would have to get recertified there.')
 
 
 
