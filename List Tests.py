@@ -95,7 +95,7 @@ for i in state_list:
 for i in s_list:
     if i not in gn_list:
         print(f'{i} is not in nasdtec')
-
+primn
 
 
 
