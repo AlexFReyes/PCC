@@ -33,8 +33,7 @@ Alabama
 .Arkansas
 .California
 .Colorado
-.Connecticut
-.Delaware
+.Connecticut  .Delaware
 .Florida
 .Georgia
 .Hawaii
@@ -79,15 +78,13 @@ Alabama
 .Wyoming
 '''.lower().split('.')
 
-nasdtec_list_clean = ''.join([i for i in nasdtec_list_raw if not i.isdigit()]).split('.')
+nasdtec_list_clean = ''.join(i for i in nasdtec_list_raw if not i.isdigit()).split('.')
 
 for i in nasdtec_list_clean:
-    ap = i.strip()
-    nasdtec_list_clean[nasdtec_list_clean.index(i)] = ap
-
+    nasdtec_list_clean[nasdtec_list_clean.index(i)] = i.strip()
+  
 for i in state_list:
-    sa = i.strip()
-    state_list[state_list.index(i)] = sa
+    state_list[state_list.index(i)]= i.strip()
 
 for i in state_list:
     if i not in nasdtec_list_clean:
