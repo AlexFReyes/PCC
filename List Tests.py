@@ -88,10 +88,7 @@ for i in state_list:
 
 for i in state_list:
     if i not in nasdtec_list_clean:
-        print(f'{i.title()} is not in the NASDTEC agreement and you would have to get recertified there.')
-
-
-
+        print(f'{i.title()} is not in the NASDTEC agreement, you would have to get recertified there.')
 
 
 
