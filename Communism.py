@@ -34,13 +34,10 @@ for i in roster_raw:
 
 #creating a list of pairs of roomates / workers
 roster_pair_list = []
-#<CHRIS>redo this to be cleaner
-for i in range(0,len(roster_raw),2):
+
+for i in range(0,len(roster_raw)-1,2):
     #grabbing the i+1 index at max wouldn't work hence safety feature
-    if i == len(roster_raw):
-        roomate = roster_raw[-1]
-    else:
-        roomate = roster_raw[i+1]
+    roomate = roster_raw[i+1]
     roster_pair_list.append(roster_raw[i] + ' & ' + roomate)
 
 #shuffling the list for fairness
@@ -61,32 +58,31 @@ num_days = e_date - s_date
 #a list of dates starting at s_date and going for the length of roster dictionary inclusive
 dates_list = [s_date + d.timedelta(days = day) for day in range((num_days.days)+1)]
 
+#making the roster_pair_list the same length as the number of days 
 rpl_copy = roster_pair_list.copy()
-#<CHRIS> for MVP fine, make it the proper length later
 while (len(roster_pair_list) < num_days.days):
-    for i in range(len(rpl_copy)):
-        roster_pair_list.append(rpl_copy[i])
-        print(len(roster_pair_list))
-        print(num_days)
+    if (num_days.days - len(roster_pair_list)) > len(rpl_copy):
+        for i in range(len(rpl_copy)):
+            roster_pair_list.append(rpl_copy[i])
+    else:
+        for i in range((num_days.days - len(roster_pair_list))):
+            roster_pair_list.append(rpl_copy[i])
 
 work_schedule = {}
 for i in range(0, num_days.days): 
-        #<CHRIS>double check datetime's toString method (might be called smth else)
         ws_key = str(dates_list[i].month) + '/' + str(dates_list[i].day) + '/' + str(s_date.year)
         work_schedule[ws_key] = roster_pair_list[i]
 
 ws_keys = list(work_schedule.keys())
 ws_values = list(work_schedule.values())
-print(ws_key)
-print(ws_values)
+
 print('Enter a date to find worker duties for that date (mm/dd/yy)\nor press enter to search by name')
 date = input()
 if date == "":
     print('Please enter your first name and first letter of your last name(first name initial)')
     name = input()
-    #<CHRIS> fix title case err
-    for i in ws_values:
-        if name.title() in str(i):
-            print(f'Comrades {ws_values[ws_values.index(i)]}, your work day is {ws_keys[ws_values.index(i)]}.')
+    for i in range(len(ws_values)):
+        if name in ws_values[i]:
+            print(f'Comrades {str(ws_values[i]).title()}, your work day is {ws_keys[i]}.')
 else:
     print(f'Comrades {str(work_schedule[date]).title()} have duties on {date}. ')
