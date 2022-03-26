@@ -77,7 +77,7 @@ Alabama
 .Wisconsin
 .Wyoming
 '''.lower().split('.')
-
+5
 nasdtec_list_clean = ''.join(i for i in nasdtec_list_raw if not i.isdigit()).split('.')
 
 for i in nasdtec_list_clean:
